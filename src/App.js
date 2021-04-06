@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+// import classes from '*.module.css';
 
 function App() {
   return (
@@ -17,7 +18,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> 
+      {/* <p>Number: {number} - Previous state: {previousState.current}</p>
+      <button onClick={() => increaseNum()}>Click</button>
+  <button>Click hre</button>*/}
     </div>
   );
 }

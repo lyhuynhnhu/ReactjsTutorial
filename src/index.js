@@ -3,10 +3,30 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProtectPage from './react-router/protect-page';
+import ProductDetail from './react-router/product-detail';
+import ErrorPage from './react-router/error-page';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import ListProducts from './react-router/list-product'
+
+function PrivateRoute() {
+  const auth = false;
+  return (
+    auth ? <div>Protected Page</div> : <div> You don't have permission</div>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={ListProducts} />
+        <Route path="/product/:id" component={ProductDetail} />
+        <PrivateRoute path="/protected-page" component={ProtectPage}/>
+        <Route path="/home" component={ErrorPage}/>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
