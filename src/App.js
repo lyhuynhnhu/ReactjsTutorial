@@ -1,11 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Parent from './component/parent.component';
+import User from './typescipt/user';
 // import classes from '*.module.css';
+const increaseNum = () => {
+  console.log("You clicked");
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <button onClick={() => increaseNum()}>Click me</button>
+      <Parent />
+      <User />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -18,10 +26,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> 
-      {/* <p>Number: {number} - Previous state: {previousState.current}</p>
-      <button onClick={() => increaseNum()}>Click</button>
-  <button>Click hre</button>*/}
+      </header>  */}
     </div>
   );
 }

@@ -19,14 +19,15 @@ function PrivateRoute() {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    {/* <Router>
       <Switch>
         <Route exact path="/" component={ListProducts} />
         <Route path="/product/:id" component={ProductDetail} />
         <PrivateRoute path="/protected-page" component={ProtectPage}/>
         <Route path="/home" component={ErrorPage}/>
       </Switch>
-    </Router>
+    </Router> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
